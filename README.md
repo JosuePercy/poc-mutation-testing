@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Proof of Concept (POC): Mutation Testing
 
-## Getting Started
+This project is a Proof of Concept (POC) to demonstrate the value of **Mutation Testing** and how it can help improve the quality of an existing test suite.
 
-First, run the development server:
+## What is a Proof of Concept (POC)?
+
+A Proof of Concept is a small project or experiment designed to test a concept or theory. The main goal is to verify that an idea is viable and has practical potential. In this case, the POC shows how mutation testing can be integrated into a project and what benefits it provides.
+
+## What is Mutation Testing?
+
+Mutation testing is a technique used to evaluate the quality of software tests. It works by making small, deliberate changes (or "mutations") to your source code. For each mutation, the tests are run again.
+
+- If the tests **fail**, the mutant is considered "killed." This is good! It means your tests were able to detect the change.
+- If the tests **pass**, the mutant "survives." This indicates a potential weakness in your test suite, as it failed to detect a code change.
+
+## Why is Mutation Testing useful?
+
+The main goal of mutation testing is to help you write better tests. A high mutation score indicates that your tests are robust and can detect a wide variety of faults.
+
+- **Identifies Test Weaknesses**: It reveals edge cases and scenarios that your tests are not covering, even if you have high code coverage (e.g., 100%).
+- **Improves Code Quality**: By forcing you to write more thorough tests, it indirectly improves the quality and reliability of your code.
+- **Complements Code Coverage**: While code coverage tells you which lines of code are executed by your tests, mutation testing tells you *how well* they are tested.
+
+## Project Scripts
+
+This project includes the following scripts:
+
+### Development
+
+To run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To build the application for production:
 
-## Learn More
+```bash
+pnpm build
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Start
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To start a production server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm start
+```
 
-## Deploy on Vercel
+### Linting
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To lint the code:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+pnpm lint
+```
+
+### Testing
+
+To run the test suite:
+
+```bash
+pnpm test
+```
+
+To run the tests and generate a coverage report:
+
+```bash
+pnpm test:coverage
+```
+
+### Mutation Testing
+
+To run mutation testing:
+
+```bash
+pnpm mutation
+```
